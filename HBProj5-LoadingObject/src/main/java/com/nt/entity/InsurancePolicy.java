@@ -42,11 +42,13 @@ public class InsurancePolicy implements Serializable{
 	public void setTenure(Integer tenure) {
 		this.tenure = tenure;
 	}
+	
 	@Override
 	public String toString() {
-		return "InsurancePolicy [policyId=" + policyId + ", policyName=" + policyName + ", policyType=" + policyType
-				+ ", company=" + company + ", tenure=" + tenure + "]";
+		return "InsurancePolicy Details : \nPolicyId=" + policyId + ", \nPolicyName=" + policyName + ", \nPolicyType=" + policyType
+				+ ", \nCompany=" + company + ", \nTenure=" + tenure;
 	}
+	
 	
 	
 
