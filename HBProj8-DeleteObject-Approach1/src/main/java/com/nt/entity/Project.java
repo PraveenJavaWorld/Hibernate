@@ -2,6 +2,7 @@ package com.nt.entity;
 
 import java.io.Serializable;
 
+@SuppressWarnings("serial")
 public class Project implements Serializable{
 	
 	private long projId;
