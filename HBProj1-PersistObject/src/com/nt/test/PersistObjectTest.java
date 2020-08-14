@@ -18,7 +18,6 @@ public class PersistObjectTest {
 		Transaction tx = null;
 		Product prod = null;
 		boolean flag = false;
-		long idVal = 0;
 		//Activate Hibernate f/w (BootStrap hibernate)
 		cfg = new Configuration();
 		System.out.println(cfg.getProperties());
