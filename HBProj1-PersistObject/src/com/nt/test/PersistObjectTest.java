@@ -35,7 +35,7 @@ public class PersistObjectTest {
 		prod = new Product();
 		prod.setPid(789);
 		prod.setPname("CPU");
-		prod.setPrice(75000);
+		prod.setPrice(72000);
 		prod.setQty(2);
 		
 		try {

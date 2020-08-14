@@ -20,7 +20,7 @@ public class FlushTest {
 		member.setMid(56L);
 		member.setName("Praveen");
 		member.setAddress("Hyderabad");
-		member.setRewardPoints(1400L);
+		member.setRewardPoints(1800L);
 		
 		try {
 			idVal = (long) session.save(member);
