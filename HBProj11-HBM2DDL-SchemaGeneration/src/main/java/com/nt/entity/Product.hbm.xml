@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+	<hibernate-mapping>
+		<class name="com.nt.entity.Product" table="PRODUCT">
+			<id name="pid" column="PID" length="11" type="int">
+				<generator class="increment"/>
+			</id>
+			<property name="pname" column="PNAME" type="string" length="20" unique="true" not-null="true"/>
+			<property name="price" column="PRICE" type="float" scale="10" precision="2" not-null="true"/>
+			<property name="qty" column="QTY" type="float" scale="10" precision="2" not-null="true"/>
+		</class>
+	</hibernate-mapping>
