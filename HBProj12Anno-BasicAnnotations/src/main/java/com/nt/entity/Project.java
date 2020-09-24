@@ -5,10 +5,16 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
+
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.Proxy;
 
 @Entity
-@Table(name = "PROJECT")
+@DynamicInsert(true)// @DynamicInsert(value = true)
+//@DynamicUpdate(true)
+//@Table(name = "PROJECT")
+@Proxy(lazy = true)
 public class Project implements Serializable {
 	
 	private Long projId;
