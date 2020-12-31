@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.nt.entity.ProgrammerProjectInfo" table="PROGRAMMERS_PROJECTS_WORK">
+		<composite-id name="id" class="com.nt.entity.ProgrammerProjectID">
+			<key-property name="pid" column="PID"/>
+			<key-property name="projId" column="PROJECT_ID"/>
+		</composite-id>
+		<property name="pname" column="PNAME" />
+		<property name="projName" column="PROJECT_NAME" />
+		<property name="deptNo" column="DEPARTMENT_NO" />
+	</class>
+</hibernate-mapping>
