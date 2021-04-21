@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.nt.entity.PersonInfo" table="PERSON_INFO">
+		<id name="pid" column="PID">
+			<generator class="sequence"/>
+		</id>
+		<property name="pname" column="PNAME" length="20" type="string"/>
+		<property name="address" column="ADDRESS" length="20" type="string"/>
+		<property name="dob" column="DOB" type="timestamp"/>
+		<property name="dom" column="DOM" type="timestamp"/>
+		<property name="doj" column="DOJ" type="timestamp"/>
+	</class>
+</hibernate-mapping>

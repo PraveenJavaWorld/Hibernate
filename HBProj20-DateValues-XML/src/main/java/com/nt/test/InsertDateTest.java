@@ -1,54 +1,55 @@
 package com.nt.test;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import com.nt.entity.ProgrammerProjectID;
-import com.nt.entity.ProgrammerProjectInfo;
+import com.nt.entity.PersonInfo;
 import com.nt.utility.HibernateUtil;
 
-public class SaveObjectTest {
+public class InsertDateTest {
 
 	public static void main(String[] args) {
 		
 		Session session = null;
+		PersonInfo info = null;
 		Transaction tx = null;
-		ProgrammerProjectID id = null;
-		ProgrammerProjectInfo info = null;
+		int idVal = 0;
 		boolean flag = false;
 		//get session obj
 		session = HibernateUtil.getSession();
+		//prepare entity obj
+		info = new PersonInfo();
+		info.setPname("Praveen");
+		info.setAddress("Ramachandrapuram");
+		info.setDob(new java.util.Date(97,11 , 18, 06, 30, 30));
+		info.setDoj(new java.util.Date());
+		info.setDom(new java.util.Date(1987, 8, 17));
 		try {
 			//begin tx
 			tx = session.beginTransaction();
-			//create entity objs
-			id = new ProgrammerProjectID();
-			id.setPid(1002);
-			id.setProjId(5002);
-			
-			info = new ProgrammerProjectInfo();
-			info.setId(id);
-			info.setPname("Rocky");
-			info.setProjName("IRCTC Bank Project");
-			info.setDeptNo(260);
-			//save object
-			id = (ProgrammerProjectID) session.save(info);
-			System.out.println("Generated ID Value :: "+id);
+			idVal = (int) session.save(info);
+			System.out.println("Generated ID Value :: "+idVal);
 			flag = true;
-		}catch (HibernateException he) {
-			he.printStackTrace();
+			
+		} catch (HibernateException he) {
 			flag = false;
-		}catch (Exception e) {
+			he.printStackTrace();
+		}
+		catch (Exception e) {
 			e.printStackTrace();
 			flag = false;
 		}
 		finally {
-			//perform TxMgmt
 			if(flag) {
 				tx.commit();
 				System.out.println("Record Is Saved");
-			}else {
+			}
+			else {
 				tx.rollback();
 				System.out.println("Record Is Not Saved");
 			}
