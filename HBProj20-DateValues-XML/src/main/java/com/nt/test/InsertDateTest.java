@@ -1,9 +1,5 @@
 package com.nt.test;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Date;
-
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -28,7 +24,7 @@ public class InsertDateTest {
 		info.setAddress("Ramachandrapuram");
 		info.setDob(new java.util.Date(97,11 , 18, 06, 30, 30));
 		info.setDoj(new java.util.Date());
-		info.setDom(new java.util.Date(1987, 8, 17));
+		info.setDom(new java.util.Date(87, 8, 17));
 		try {
 			//begin tx
 			tx = session.beginTransaction();

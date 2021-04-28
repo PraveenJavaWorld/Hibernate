@@ -11,7 +11,7 @@
 		<property name="pname" column="PNAME" length="20" type="string"/>
 		<property name="address" column="ADDRESS" length="20" type="string"/>
 		<property name="dob" column="DOB" type="timestamp"/>
-		<property name="dom" column="DOM" type="timestamp"/>
+		<property name="dom" column="DOM" type="date"/>
 		<property name="doj" column="DOJ" type="timestamp"/>
 	</class>
 </hibernate-mapping>

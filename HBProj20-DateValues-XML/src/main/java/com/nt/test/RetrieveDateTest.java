@@ -23,7 +23,7 @@ public class RetrieveDateTest {
 		
 		try {
 			//prepare entity obj
-			info = session.get(PersonInfo.class, 42);
+			info = session.get(PersonInfo.class, 3);
 			if(info!=null) {
 				System.out.println(info);
 			}
