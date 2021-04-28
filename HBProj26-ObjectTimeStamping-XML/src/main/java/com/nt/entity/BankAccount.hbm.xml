@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+	<hibernate-mapping>
+		<class name="com.nt.entity.BankAccount" table="BANKACCOUNT">
+			<id name="acno" column="ACCOUNTNUMBER" type="long">
+				<generator class="sequence">
+					<param name="sequence_name">ACNO_SEQ</param>
+				</generator>
+			</id>
+			<timestamp name="lastUpdated"/>
+			<property name="holder" column="ACCOUNTHOLDER" type="string" length="20"/>
+			<property name="balance" column="BALANCE" type="double"/>
+			<property name="type" column="TYPE" type="string" length="20"/>
+			<property name="openingDate" column="OPENINGDATE"/>
+		</class>
+	</hibernate-mapping>
+
