@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.nt.entity">
+	<class name="Person" table="INH_PERSON_TPCC">
+		<id name="id" type="int">
+			<generator class="increment"/>
+		</id>
+		<property name="name" type="string" length="20"/>
+		<property name="address" type="string" length="20"/>
+		
+		<union-subclass name="Employee" table="INH_EMPLOYEE_TPCC">
+			<property name="designation" type="string" length="20"/>
+			<property name="salary" type="float"/>
+			<property name="deptNo" type="int"/>
+		</union-subclass>
+		
+		<union-subclass name="Student" table="INH_STUDENT_TPCC">
+			<property name="college" type="string" length="20"/>
+			<property name="branch" type="string" length="20"/>
+			<property name="average" type="float"/>
+		</union-subclass>
+	</class>
+</hibernate-mapping>
