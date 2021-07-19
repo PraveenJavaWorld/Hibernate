@@ -28,12 +28,12 @@ public class CollectionMappingInsertionTest {
 				tx = session.beginTransaction();
 			//prepare objs
 			emp = new Employee();
-			emp.setEname("Praveen");
-			emp.setAddress("RCPM");
-			emp.setFriendsList(List.of("Chaitu","Pavan Kalyan","Ramana"));
-			emp.setRelativesList(List.of("Uncle","Aunty","Brother"));
+			emp.setEname("Rocky");
+			emp.setAddress("Hyderabad");
+			emp.setFriendsList(List.of("Praveen","Vijay"));
+			emp.setRelativesList(List.of("Uncle","Aunty","Sister"));
 			emp.setPhoneNumbers(Set.of(987654321L,123456789L,963852741L));
-			emp.setBankAccounts(Map.of("Axis  Bank",123456789L,"HDFC Bank",987654321L,"SBI",963852741L));
+			emp.setBankAccounts(Map.of("SBI",123456789L,"ICICI Bank",987654321L,"Union Bank",963852741L));
 			//save objs
 			session.save(emp);
 			flag = true;
