@@ -153,10 +153,6 @@ public class ManyToOneDAOImpl implements ManyToOneDAO {
 			flag = false;
 			he.printStackTrace();
 		}
-		catch (Exception e) {
-			flag = false;
-			e.printStackTrace();
-		}
 		finally {
 			if(flag) {
 				tx.commit();
